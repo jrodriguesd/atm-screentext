@@ -2,7 +2,7 @@
   "name": "atm-screentext",
   "version": "0.1.0",
   "description": "ATM Screen Text Service",
-  "main": "states.js",
+  "main": "screentext.js",
   "scripts": {
     "test": "istanbul cover jasmine"
   },
