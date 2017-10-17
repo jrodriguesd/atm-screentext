@@ -1,0 +1,6 @@
+node_modules
+coverage
+yarn.lock
+dist/
+*.tgz
+*.log

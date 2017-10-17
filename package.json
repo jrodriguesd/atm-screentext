@@ -1,0 +1,28 @@
+{
+  "name": "atm-screentext",
+  "version": "0.1.0",
+  "description": "ATM Screen Text Service",
+  "main": "states.js",
+  "scripts": {
+    "test": "istanbul cover jasmine"
+  },
+  "repository": "https://github.com/timgabets/atm-screentext",
+  "keywords": [
+    "ATM",
+    "Screen",
+    "Screentext"
+  ],
+  "author": {
+    "name": "Tim Gabets",
+    "email": "tim@gabets.ru",
+    "url": "http://gabets.ru/"
+  },
+  "license": "LGPL-2.1",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.8.0"
+  },
+  "dependencies": {
+    "atm-cursor": "^0.1.1"
+  }
+}
