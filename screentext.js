@@ -32,11 +32,15 @@ function ScreenTextService(cursor){
    * @param  {[type]} screen_text [description]
    * @return {[type]}             [description]
    */
-  this.copy = function(screen_text){
+  this.copy = function(screen_text)
+  {
     for (var key in screen_text)
-      if (screen_text.hasOwnProperty(key)){
+	{
+      if (screen_text.hasOwnProperty(key))
+	  {
         this.screen_text[key] = screen_text[key];
-    }
+      }
+	}
     this.cursor.init();
   };
 
@@ -59,7 +63,9 @@ function ScreenTextService(cursor){
 
       for (var key in this.screen_text)
         if (this.screen_text.hasOwnProperty(key)){
-          converted[key] = this.screen_text[key].split(' ').join('&nbsp');
+		  var ikey = key;
+		  if (key === '@') ikey = 'at';
+          converted[ikey] = this.screen_text[key].split(' ').join('&nbsp');
         }
 
       return converted;
@@ -82,11 +88,14 @@ function ScreenTextService(cursor){
    * [add description]
    * @param {[type]} text [description]
    */
-  this.add = function(text){
+  this.add = function(text)
+  {
     if(this.screen_text['@'] === undefined)
       this.init();
+	console.log("JFRD node_modules\\atm-screentext\\screentext.js Line 95 >" + this.screen_text['@'] + "<");
 
-    for(var i = 0; i < text.length; i++){
+    for(var i = 0; i < text.length; i++)
+	{
       var char = text[i];
       var row = this.cursor.getPosition()['y'];
       var column = this.cursor.cursor_position['x'];
@@ -126,6 +135,7 @@ function ScreenTextService(cursor){
   this.setCursorPosition = function(cursor_position){
     this.cursor.setPosition(cursor_position['y'] + cursor_position['x']);
   };
+
 };
 
 module.exports = ScreenTextService;
