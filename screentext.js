@@ -27,6 +27,12 @@ function ScreenTextService(cursor){
     };
   };
 
+  function setCharAt(str,index,chr) 
+  {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+  }
+
   /**
    * [copy description]
    * @param  {[type]} screen_text [description]
@@ -38,7 +44,11 @@ function ScreenTextService(cursor){
 	{
       if (screen_text.hasOwnProperty(key))
 	  {
-        this.screen_text[key] = screen_text[key];
+	    for(i = 0; i < screen_text[key].length; i++)
+		{
+		  if (screen_text[key].charAt(i) != ' ')
+              this.screen_text[key] = setCharAt(this.screen_text[key], i, screen_text[key].charAt(i) );
+		}
       }
 	}
     this.cursor.init();
