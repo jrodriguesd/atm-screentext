@@ -102,7 +102,6 @@ function ScreenTextService(cursor){
   {
     if(this.screen_text['@'] === undefined)
       this.init();
-	console.log("JFRD node_modules\\atm-screentext\\screentext.js Line 95 >" + this.screen_text['@'] + "<");
 
     for(var i = 0; i < text.length; i++)
 	{
